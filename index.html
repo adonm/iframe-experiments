@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="" class="has-navbar-fixed-top">
+
+<head>
+	<title>Appswitcher</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+	<style>
+		:root {
+			--bulma-link-h: 171deg;
+			--bulma-link-l: 40%;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar is-fixed-top" role="navigation" aria-label="dropdown navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="https://bulma.io">APPS</a>
+		</div>
+		<div class="navbar-menu">
+			<div class="navbar-start">
+				<a class="navbar-item is-selected" href="#www.wa.gov.au">wa.gov.au</a>
+				<a class="navbar-item" href="#www.dfes.wa.gov.au">www.dfes.wa.gov.au</a>
+			</div>
+		</div>
+	</nav>
+	<section class="hero is-fullheight-with-navbar">
+		<iframe src="https://www.wa.gov.au" class="hero is-fullheight"></iframe>
+		</div>
+		<script>
+			const iframe = document.querySelector('iframe.hero.is-fullheight');
+			onhashchange = (event) => {
+				for (let navitem of document.querySelectorAll("a.navbar-item")) {
+					navitem.classList.remove("is-selected");
+				}
+				document.querySelector(`a.navbar-item[href="${location.hash}"]`).classList.add("is-selected");
+				iframe.src = "https://" + location.hash.slice(1)
+			};
+			location.hash = `#${iframe.src.slice(8)}`
+		</script>
+</body>
+
+</html>
