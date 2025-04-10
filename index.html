@@ -17,15 +17,19 @@
 <body>
 	<nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="navigation">
 		<div class="navbar-brand">
-			<button class="navbar-item" hx-get="content.html" hx-select="div#navgrid"
-				hx-target="section.hero">Home</button>
+			<button class="navbar-item" hx-get="content.html" hx-select="div#navgrid" hx-target="section.hero">
+				<span class="icon"><i class="fa fa-home"></i></span>
+				<span>Home</span>
+			</button>
 			<span class="navbar-item">></span>
-			<button class="navbar-item is-selected" id="frametitle"
-				hx-on:click="document.querySelector('iframe.hero').src += '';">...</button>
+			<button class="navbar-item is-selected" hx-on:click="document.querySelector('iframe.hero').src += '';">
+				<span class="icon"><i class="fa fa-globe"></i></span>
+				<span id="frametitle">...</span>
+			</button>
 		</div>
 	</nav>
 	<section class="hero is-fullheight-with-navbar" hx-get="content.html" hx-trigger="load" hx-select="div#navgrid"
-		hx-on:htmx:after-swap="document.querySelector('button#frametitle').textContent = this.children[0].title;">
+		hx-on:htmx:after-swap="document.querySelector('span#frametitle').textContent = this.children[0].title;">
 	</section>
 </body>
 
