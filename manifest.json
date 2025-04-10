@@ -1,11 +1,14 @@
 {
-    "name": "Aaah! real iframes!",
-    "start_url": "index.html",
-    "display": "fullscreen",
-    "icons": [
-        {
-            "src": "icon.svg",
-            "sizes": "any"
-        }
-    ]
+  "name": "Aaah! real iframes!",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "short_name": "IFRAMES!!!"
 }
