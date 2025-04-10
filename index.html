@@ -1,45 +1,32 @@
 <!DOCTYPE html>
-<html lang="" class="has-navbar-fixed-top">
+<html lang="en" class="has-navbar-fixed-top">
 
 <head>
-	<title>Appswitcher</title>
+	<title>It's like a webpage inside a webpage!</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-	<style>
-		:root {
-			--bulma-link-h: 171deg;
-			--bulma-link-l: 40%;
-		}
-	</style>
+	<link rel="stylesheet" href="https://unpkg.com/bulma@1.0.2"
+		integrity="sha384-MC7xjLI7ZCEFyY5FKfmCXkglRkEEQniQUf/cog0GKGHxmJ4i56S7jgxNeosRea9N" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.7.2/css/all.css"
+		integrity="sha384-2+60qu/gnxJgsqsxJD6ji+GRxiI9685VK/LdfC7jofqMEGqhASfHl1ayqu7tWI/r" crossorigin="anonymous">
+	<script src="https://unpkg.com/htmx.org@2.0.4"
+		integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+		crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<nav class="navbar is-fixed-top" role="navigation" aria-label="dropdown navigation">
+	<nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="https://bulma.io">APPS</a>
-		</div>
-		<div class="navbar-menu">
-			<div class="navbar-start">
-				<a class="navbar-item is-selected" href="#www.wa.gov.au">wa.gov.au</a>
-				<a class="navbar-item" href="#www.dfes.wa.gov.au">www.dfes.wa.gov.au</a>
-			</div>
+			<button class="navbar-item" hx-get="content.html" hx-select="div#navgrid"
+				hx-target="section.hero">Home</button>
+			<span class="navbar-item">></span>
+			<button class="navbar-item is-selected" id="frametitle"
+				hx-on:click="document.querySelector('iframe.hero').src += '';">...</button>
 		</div>
 	</nav>
-	<section class="hero is-fullheight-with-navbar">
-		<iframe src="https://www.wa.gov.au" class="hero is-fullheight"></iframe>
-		</div>
-		<script>
-			const iframe = document.querySelector('iframe.hero.is-fullheight');
-			onhashchange = (event) => {
-				for (let navitem of document.querySelectorAll("a.navbar-item")) {
-					navitem.classList.remove("is-selected");
-				}
-				document.querySelector(`a.navbar-item[href="${location.hash}"]`).classList.add("is-selected");
-				iframe.src = "https://" + location.hash.slice(1)
-			};
-			location.hash = `#${iframe.src.slice(8)}`
-		</script>
+	<section class="hero is-fullheight-with-navbar" hx-get="content.html" hx-trigger="load" hx-select="div#navgrid"
+		hx-on:htmx:after-swap="document.querySelector('button#frametitle').textContent = this.children[0].title;">
+	</section>
 </body>
 
 </html>

@@ -1,0 +1,37 @@
+<div class="box" title="Navigation" id="navgrid">
+    <div class="grid buttons are-medium">
+        <button class="cell button" hx-get="content.html" hx-target="section.hero" hx-select="iframe#wasoc">
+            <span class="icon">
+                <i class="fa fa-shield"></i>
+            </span>
+            <span>WA SOC</span>
+        </button>
+        <button class="cell button" hx-get="content.html" hx-target="section.hero" hx-select="iframe#htmx">
+            <span class="icon">
+                <i class="fa fa-code"></i>
+            </span>
+            <span>HTMX</span>
+        </button>
+        <button class="cell button" hx-get="content.html" hx-target="section.hero" hx-select="iframe#mkdocs">
+            <span class="icon">
+                <i class="fab fa-markdown"></i>
+            </span>
+            <span>MkDocs</span>
+        </button>
+        <button class="cell button" hx-get="content.html" hx-target="section.hero" hx-select="iframe#sigmatron">
+            <span class="icon">
+                <i class="fa fa-list"></i>
+            </span>
+            <span>Sigmatron</span>
+        </button>
+    </div>
+</div>
+<div class="hidden">
+    <iframe title="WA Cyber Security Unit (DGOV Technical)" src="https://soc.cyber.wa.gov.au" class="hero is-fullheight"
+        id="wasoc"></iframe>
+    <iframe title="HTMX" src="https://htmx.org/" class="hero is-fullheight"
+        id="htmx"></iframe>
+    <iframe title="Material for MkDocs" src="https://squidfunk.github.io/mkdocs-material/" class="hero is-fullheight"
+        id="mkdocs"></iframe>
+    <iframe title="Sigmatron" src="https://adonm.github.io/stlite-apps/apps/sigmatron.html" class="hero is-fullheight" id="sigmatron"></iframe>
+</div>
