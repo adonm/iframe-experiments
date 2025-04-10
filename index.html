@@ -34,7 +34,7 @@
 			</button>
 		</div>
 	</nav>
-	<section class="hero is-fullheight-with-navbar" hx-get="content.html" hx-trigger="load" hx-select="div#navgrid"
+	<section class="hero is-fullheight-with-navbar has-background-white" hx-get="content.html" hx-trigger="load" hx-select="div#navgrid"
 		hx-on:htmx:after-swap="document.querySelector('span#frametitle').textContent = this.children[0].title;">
 	</section>
 </body>
