@@ -1,10 +1,10 @@
 <div class="box has-background-white" title="Navigation" id="navgrid">
     <div class="grid buttons are-medium">
-        <button class="cell button is-link" hx-get="content.html" hx-target="section.hero" hx-select="iframe#passkey">
+        <button class="cell button is-link" hx-get="content.html" hx-target="section.hero" hx-select="iframe#child">
             <span class="icon">
-                <i class="fa fa-lock"></i>
+                <i class="fa fa-child"></i>
             </span>
-            <span>Passkey test</span>
+            <span>Child app test</span>
         </button>
         <button class="cell button is-warning" hx-get="content.html" hx-target="section.hero" hx-select="iframe#wasoc">
             <span class="icon">
@@ -33,8 +33,8 @@
     </div>
 </div>
 <div class="hidden">
-    <iframe title="Passkey test" src="https://webauthn.lubu.ch/_test/client.html" class="hero is-fullheight"
-        allow="publickey-credentials-get; publickey-credentials-create" id="passkey"></iframe>
+    <iframe title="Child app test" src="https://adonm.github.io/iframe-experiments-child/" class="hero is-fullheight"
+        id="child"></iframe>
     <iframe title="WA Cyber Security Unit (DGOV Technical)" src="https://soc.cyber.wa.gov.au" class="hero is-fullheight"
         id="wasoc"></iframe>
     <iframe title="HTMX" src="https://htmx.org/" class="hero is-fullheight"
